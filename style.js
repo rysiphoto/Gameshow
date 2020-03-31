@@ -44,6 +44,13 @@ function endGame() {
 setTime();
 
 
+
+
+
+
+
+
+
 const questions = [
     {
         question: 'Who is not a member of Led Zeppelin?',
@@ -92,3 +99,91 @@ const questions = [
     }
 
 ];
+// var questions = ["Who is not a member of Led Zeppelin?", "Which song is an AC/DC song?", "Which is a Porno for Pyros song?", "Who was not a singer for Van Halen", "Who was not in Pink Floyd"];
+
+for (i = 0; i < questions.length; i++) {
+    console.log(questions);
+}
+
+// questionsCon = question[0]
+// button1 = questions[0].answer[0];
+// button2 = questions[0].answer[1];
+// button3 = questions[0].answer[2];
+// button4 = questions[0].answer[3];
+
+// questionsCon = question[1]
+// button1 = questions[1].answer[0];
+// button2 = questions[1].answer[1];
+// button3 = questions[1].answer[2];
+// button4 = questions[1].answer[3];
+
+// questionsCon = question[2]
+// button1 = questions[2].answer[0];
+// button2 = questions[2].answer[1];
+// button3 = questions[2].answer[2];
+// button4 = questions[2].answer[3];
+
+// questionsCon = question[3]
+// button1 = questions[3].answer[0];
+// button2 = questions[3].answer[1];
+// button3 = questions[3].answer[2];
+// button4 = questions[3].answer[3];
+
+// questionsCon = question[4]
+// button1 = questions[4].answer[0];
+// button2 = questions[4].answer[1];
+// button3 = questions[4].answer[2];
+// button4 = questions[4].answer[3];
+
+var playerID = document.querySelector("#player-ID");
+var pID = document.querySelector("#p-ID");
+var playerTop = document.querySelector("#player-Top");
+
+var player = [];
+
+init();
+
+function renderPlayer() {
+    playerTop.innerHTML = "";
+
+
+    for (var i = 0; i < player.length; i++) {
+        var play = player[i];
+
+        var li = document.createElement("li");
+        li.textContent = play;
+        li.setAttribute("data-index", i);
+
+        playerTop.appendChild(li);
+    }
+}
+
+
+function init() {
+
+    var savedPlayer = JSON.parse(localStorage.getItem("player"));
+    if (savedPlayer !== null) {
+        player = savedPlayer;
+    }
+
+    renderPlayer();
+}
+
+function storePlayer() {
+    localStorage.setItem("player", JSON.stringify(player));
+}
+
+pID.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var pID = playerID.value.trim();
+    if (pID === "") {
+        return;
+    }
+
+    player.push(pID);
+    playerID.value = "";
+
+    storePlayer();
+    renderPlayer();
+});
