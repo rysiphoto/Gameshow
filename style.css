@@ -1,0 +1,113 @@
+#button1, #button2, #button3, #button4 {
+    color: white;
+    border: solid, 1px, red;
+    width: 200px;
+    height: 30px;
+    font-size: 14px;
+    background-color: crimson;
+    margin: 10px, 30px, 10px, 0px;
+    border-radius: 5px;
+
+}
+
+#button1:hover, #button2:hover, #button3:hover, #button4:hover {
+    cursor: pointer;
+    background-color: rgb(216, 63, 94);
+    border-radius: 5px;
+}
+
+.timer {
+    color: white;
+    background-color: crimson;
+    font-size: 25px;
+    width: 60px;
+    height: 50px;
+    border: solid, 10px, rgb(48, 48, 48);
+    float: right;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar {
+background-color: rgb(216, 63, 94);
+color: white;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.741);
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.btn {
+    justify-content: center;
+    width: 450px;
+    display: grid;
+
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+width: 850px;
+background-color: rgb(77, 77, 77);
+border-radius: 10px;
+padding: 5px;
+border: 5px, solid, blanchedalmond;
+}
+
+.questions {
+
+    width: 450px;
+    height: 400px;
+    background-color: rgb(77, 77, 77);
+    border-radius: 5px;
+    padding: 5px;
+    border: 5px, solid, rgb(252, 207, 140); 
+    border-radius: 10px;
+
+}
+.startButton {
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.startGameButton {
+
+    height: 125px;
+    width: 200px;
+    color: white;
+    border: solid, 1px, red;
+    font-size: 50px;
+    background-color: crimson;
+    margin: 10px, 30px, 10px, 0px;
+    border-radius: 10px;
+
+}
+.startGameButton:hover {
+    cursor: pointer;
+    background-color: rgb(216, 63, 94);
+    border-radius: 10px;
+}
+.col-md-8 {
+    float: center; 
+}
+
+.playGame {
+    color: white;
+justify-content: center;
+align-items: center;
+width: 800px;
+background-color: rgb(77, 77, 77);
+border-radius: 10px;
+padding: 5px;
+border: 5px, solid, blanchedalmond;
+}
