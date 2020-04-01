@@ -1,5 +1,5 @@
 var questionNumber = 0;
-
+// Start Button to start the quiz and show timer
 function startQuiz() {
     var x = document.getElementById("playGame");
     if (x.style.display === "none") {
@@ -11,7 +11,7 @@ function startQuiz() {
 
 var timeEl = document.querySelector(".timer");
 var mainEl = document.getElementById("addInits");
-
+// set up timer
 var secondsLeft = 90;
 
 function setTime() {
@@ -26,6 +26,8 @@ function setTime() {
 
     }, 1000);
 }
+
+// end of game functions to bring up player board
 function endGame() {
     console.log(secondsLeft);
     var y = document.getElementById("addInits")
@@ -37,7 +39,7 @@ function endGame() {
 };
 
 setTime();
-
+// arrays
 
 var questions = ["Who is not a member of Led Zeppelin?", "Which song is an AC/DC song?", "Which is a Porno for Pyros song?", "Who was not a singer for Van Halen", "Who was not in Pink Floyd"];
 
@@ -60,7 +62,7 @@ nextQuestion();
 
 function nextQuestion() {
 
-    // console.log(questions[questionNumber]);
+    // fill buttons with array options
     console.log(questionNumber);
     if (questions.length > questionNumber) {
         document.getElementById("questionBox").innerText = (questions[questionNumber]);
@@ -73,7 +75,7 @@ function nextQuestion() {
     }
 };
 
-
+// quiz behavior and penalties
 function answer(answerThis) {
 
     if (answersArr[questionNumber][answerThis.value] == answersCorrect[questionNumber]) {
@@ -92,7 +94,7 @@ function answer(answerThis) {
 
     };
 };
-
+// create player for score board
 function renderPlayer() {
     playerTop.innerHTML = "";
 
@@ -121,6 +123,8 @@ function init() {
 
     renderPlayer();
 }
+
+// store scores on local storage
 function storeScore() {
     localStorage.setItem("timer", JSON.stringify(timer));
 }
