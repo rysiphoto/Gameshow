@@ -11,17 +11,11 @@ function startQuiz() {
         x.style.display = "none";
     }
 }
-// var quizStart = document.querySelector("#questions");
-
-// startButton.addEventListener("click", function () {
-//     document.getElementById("questions");
-
-// });
 
 var timeEl = document.querySelector(".timer");
 var mainEl = document.getElementById("addInits");
 
-var secondsLeft = 90;
+var secondsLeft = 5;
 
 function setTime() {
     var timerInterval = setInterval(function () {
@@ -36,14 +30,13 @@ function setTime() {
     }, 1000);
 }
 function endGame() {
-    timeEl.textContent = " ";
-
-    var addInitsEnd = document.element.style.display = "addInits";
-
-    addInitsEnd.setAttribute("class", "addInits");
-    mainEl.appendChild(addInitsEnd);
-
-}
+    var y = document.getElementById("addInits")
+    if (y.style.display === "none") {
+        y.style.display = "block";
+    } if (("playGame").display === "block"); {
+        ("gamePlay").display = "none";
+    }
+};
 
 setTime();
 
@@ -57,17 +50,22 @@ var answers3 = ["Pets", "Been Caught Stealing", "Mountain Song", "Stop"];
 var answers4 = ["Gary Cherone", "Sammy Hagar", "David Lee Roth", "Perry Farrell"];
 var answers5 = ["David Gilmour", "Bob Klose", "Roger Water", "Bob Weir"];
 
-var answersArr = [answers1, answers2, answers3, answers4, answers5];
-var answersCorrect = ["Robert Palmer", "Dirty Deeds", "Pets", "Perry Farrell", "Bob Weir"]
+
+
+var answersCorrect = ["Robert Palmer", "Dirty Deeds", "Pets", "Perry Farrell", "Bob Weir"];
+
 var playerID = document.querySelector("#player-ID");
 var pID = document.querySelector("#p-ID");
 var playerTop = document.querySelector("#player-Top");
 
 var player = [];
-
+var answersArr = [answers1, answers2, answers3, answers4, answers5];
 init();
 nextQuestion(questions[questionNumber], answersArr[questionNumber]);
+
 function nextQuestion(stQuestion, arrAnswer) {
+
+    console.log(stQuestion);
     document.getElementById("questionBox").innerText = (stQuestion);
     document.getElementById("button1").innerText = (arrAnswer[0]);
     document.getElementById("button2").innerText = (arrAnswer[1]);
@@ -75,8 +73,14 @@ function nextQuestion(stQuestion, arrAnswer) {
     document.getElementById("button4").innerText = (arrAnswer[3]);
 };
 
+
+
 function answer(answerThis) {
-    console.log(answerThis);
+    if (onclick.getElementById(answer) = (("Robert Palmer" === "Robert Palmer") || ("Dirty Deeds" === "Dirty Deeds") || ("Pets" === "Pets") || ("Perry Farrell" === "Perry Farrell") || ("Bob Weir" === "Bob Weir"))) {
+        nextQuestion();
+    } else {
+        nextQuestion(), secondsLeft - 5;
+    };
 };
 
 function renderPlayer() {
