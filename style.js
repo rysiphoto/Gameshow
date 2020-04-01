@@ -1,3 +1,7 @@
+var questionNumber = 0;
+
+
+
 
 function startQuiz() {
     var x = document.getElementById("playGame");
@@ -44,97 +48,17 @@ function endGame() {
 setTime();
 
 
+var questions = ["Who is not a member of Led Zeppelin?", "Which song is an AC/DC song?", "Which is a Porno for Pyros song?", "Who was not a singer for Van Halen", "Who was not in Pink Floyd"];
 
 
+var answers1 = ["Robert Palmer", "Jimmy Page", "John Paul Jones", "John Bonham"];
+var answers2 = ["Eruption", "Jungle Love", "Dirty Deeds", "Love Gun"];
+var answers3 = ["Pets", "Been Caught Stealing", "Mountain Song", "Stop"];
+var answers4 = ["Gary Cherone", "Sammy Hagar", "David Lee Roth", "Perry Farrell"];
+var answers5 = ["David Gilmour", "Bob Klose", "Roger Water", "Bob Weir"];
 
-
-
-
-
-const questions = [
-    {
-        question: 'Who is not a member of Led Zeppelin?',
-        answer: [
-            { text: 'Robert Palmer', correct: true },
-            { text: 'Jimmy Page', correct: false },
-            { text: 'John Paul Jones', correct: false },
-            { text: 'John Bonham', correct: false },
-        ]
-    },
-    {
-        question: 'Which song is an AC/DC song?',
-        answer: [
-            { text: 'Eruption', correct: false },
-            { text: 'Jungle Love', correct: false },
-            { text: 'Dirty Deeds', correct: true },
-            { text: 'Love Gun', correct: false },
-        ]
-    },
-    {
-        question: 'Which is a Porno for Pyros song?',
-        answer: [
-            { text: 'Pets', correct: true },
-            { text: 'Been Caught Stealing', correct: false },
-            { text: 'Mountain Song', correct: false },
-            { text: 'Stop', correct: false },
-        ]
-    },
-    {
-        question: 'Who was not a singer for Van Halen',
-        answer: [
-            { text: 'Gary Cherone', correct: false },
-            { text: 'Sammy Hagar', correct: false },
-            { text: 'David Lee Roth', correct: false },
-            { text: 'Perry Farrell', correct: true },
-        ]
-    },
-    {
-        question: 'Who was not in Pink Floyd',
-        answer: [
-            { text: 'David Gilmour', correct: false },
-            { text: 'Bob Klose', correct: false },
-            { text: 'Roger Waters', correct: false },
-            { text: 'Bob Weir', correct: true },
-        ]
-    }
-
-];
-// var questions = ["Who is not a member of Led Zeppelin?", "Which song is an AC/DC song?", "Which is a Porno for Pyros song?", "Who was not a singer for Van Halen", "Who was not in Pink Floyd"];
-
-for (i = 0; i < questions.length; i++) {
-    console.log(questions);
-}
-
-// questionsCon = question[0]
-// button1 = questions[0].answer[0];
-// button2 = questions[0].answer[1];
-// button3 = questions[0].answer[2];
-// button4 = questions[0].answer[3];
-
-// questionsCon = question[1]
-// button1 = questions[1].answer[0];
-// button2 = questions[1].answer[1];
-// button3 = questions[1].answer[2];
-// button4 = questions[1].answer[3];
-
-// questionsCon = question[2]
-// button1 = questions[2].answer[0];
-// button2 = questions[2].answer[1];
-// button3 = questions[2].answer[2];
-// button4 = questions[2].answer[3];
-
-// questionsCon = question[3]
-// button1 = questions[3].answer[0];
-// button2 = questions[3].answer[1];
-// button3 = questions[3].answer[2];
-// button4 = questions[3].answer[3];
-
-// questionsCon = question[4]
-// button1 = questions[4].answer[0];
-// button2 = questions[4].answer[1];
-// button3 = questions[4].answer[2];
-// button4 = questions[4].answer[3];
-
+var answersArr = [answers1, answers2, answers3, answers4, answers5];
+var answersCorrect = ["Robert Palmer", "Dirty Deeds", "Pets", "Perry Farrell", "Bob Weir"]
 var playerID = document.querySelector("#player-ID");
 var pID = document.querySelector("#p-ID");
 var playerTop = document.querySelector("#player-Top");
@@ -142,6 +66,18 @@ var playerTop = document.querySelector("#player-Top");
 var player = [];
 
 init();
+nextQuestion(questions[questionNumber], answersArr[questionNumber]);
+function nextQuestion(stQuestion, arrAnswer) {
+    document.getElementById("questionBox").innerText = (stQuestion);
+    document.getElementById("button1").innerText = (arrAnswer[0]);
+    document.getElementById("button2").innerText = (arrAnswer[1]);
+    document.getElementById("button3").innerText = (arrAnswer[2]);
+    document.getElementById("button4").innerText = (arrAnswer[3]);
+};
+
+function answer(answerThis) {
+    console.log(answerThis);
+};
 
 function renderPlayer() {
     playerTop.innerHTML = "";
@@ -158,6 +94,9 @@ function renderPlayer() {
     }
 }
 
+$("#button-clear").click(function () {
+    $("#player-Top").empty(localStorage); //empty removes all children elements
+});
 
 function init() {
 

@@ -114,7 +114,7 @@ border: 5px, solid, blanchedalmond;
 }
 
 .addInits {
-    
+
     color: white;
     justify-content: center;
     align-items: center;
@@ -124,4 +124,29 @@ border: 5px, solid, blanchedalmond;
     padding: 5px;
     border: 5px, solid, blanchedalmond;
 
+}
+
+.button-clear {
+    float: right;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    border: solid, 1px, red;
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    background-color: crimson;
+    margin: 10px, 30px, 10px, 0px;
+    border-radius: 5px;
+
+}
+
+.button-clear:hover {
+    float: right;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgb(216, 63, 94);
+    border-radius: 5px;
 }

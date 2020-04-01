@@ -31,27 +31,31 @@
 
             </div>
             <div class="questionsCon" id="questionsCon">
-                <p id="questionBox">
+                <p id="questionBox"></p>
 
             </div>
             <div class="btn game" id="btn">
-                <button class="button1" id="button1" onclick="answer1()"></button>
-                <button class="button2" id="button2" onclick="answer2()"></button>
-                <button class="button3" id="button3" onclick="answer3()"></button>
-                <button class="button4" id="button4" onclick="answer4()"></button>
+                <button class="button1" id="button1" onclick="answer(this)"></button>
+                <button class="button1" id="button2" onclick="answer(this)"></button>
+                <button class="button1" id="button3" onclick="answer(this)"></button>
+                <button class="button1" id="button4" onclick="answer(this)"></button>
 
-                </p>
+
             </div>
 
-            <div class="addInits" style="display: none;">
+            <div class="addInits">
 
-                <div class="players" id="players">
+                <div class="players" id="players" style="display: none;">
                     <form id="p-ID" method="POST">
                         <label for="player-ID">Add your Initials</label>
                         <input type="text" placeholder="ABC" name="player-ID" id="player-ID">
+
                     </form>
+                    <div class="button-clear" id="button-clear">Clear</div>
+
                     <p>
                         <ul id="player-Top"></ul>
+
                     </p>
 
                 </div>
